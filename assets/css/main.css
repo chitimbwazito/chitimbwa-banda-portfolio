@@ -12,29 +12,41 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #272829;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #050d18;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #149ddd;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #a8a9b4;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #040b14;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #040b14;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #a8a9b4;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffffff;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -542,7 +554,7 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
+/* .hero {
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -606,6 +618,147 @@ section,
 
 .hero .social-links a:hover {
   color: var(--accent-color);
+} */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profession {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.typed {
+  color: #4db5ff;
+  font-weight: 600;
+}
+
+.cta-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin: 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: #4db5ff;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(77, 181, 255, 0.4);
+}
+
+.btn-primary:hover {
+  background: #2a9df4;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(77, 181, 255, 0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+  border-color: #4db5ff;
+  color: #4db5ff;
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .profession {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    margin: 5px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .profession {
+    font-size: 1.2rem;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    margin: 5px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -684,38 +837,166 @@ section,
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
+.skills-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
 }
 
-.skills .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: #333;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
   display: block;
+  width: 50px;
+  height: 3px;
+  background: #4db5ff;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: #666;
+  font-size: 17px;
+}
+
+.skills-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+
+.category-btn {
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn.active,
+.category-btn:hover {
+  background: #4db5ff;
+  color: white;
+  border-color: #4db5ff;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.skill-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #4db5ff;
+}
+
+.skill-icon {
+  margin-bottom: 15px;
+  font-size: 36px;
+  color: #4db5ff;
+}
+
+.skill-info h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
   font-weight: 600;
-  font-family: var(--heading-font);
+  color: #333;
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
+.skill-level-container {
+  background: #f0f0f0;
   height: 10px;
+  border-radius: 5px;
+  position: relative;
 }
 
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
+.skill-level {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(to right, #4db5ff, #2a9df4);
+  position: relative;
+  transition: width 1.5s ease-in-out;
+}
+
+.skill-percent {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Animation for skill bars */
+@keyframes skillFill {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.skills-animation .skill-level {
+  animation: skillFill 1.5s ease-in-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -780,114 +1061,265 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
-  padding: 0;
-  margin: 0 auto 20px auto;
-  list-style: none;
+.portfolio-section {
+  padding: 90px 0;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.section-title {
   text-align: center;
+  margin-bottom: 50px;
 }
 
-.portfolio .portfolio-filters li {
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: #333;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #4db5ff;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title p {
+  font-size: 17px;
+  color: #666;
+}
+
+/* Portfolio Filters */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
   cursor: pointer;
-  display: inline-block;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0 10px;
-  line-height: 1;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
 }
 
-.portfolio .portfolio-filters li:hover,
-.portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
+.filter-btn.active,
+.filter-btn:hover {
+  background: #4db5ff;
+  color: white;
+  border-color: #4db5ff;
+  box-shadow: 0 5px 15px rgba(77, 181, 255, 0.2);
 }
 
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
 }
 
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
+/* Portfolio Item */
+.portfolio-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 5px;
-  }
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio .portfolio-content {
+.portfolio-img {
   position: relative;
   overflow: hidden;
+  height: 240px;
 }
 
-.portfolio .portfolio-content img {
-  transition: 0.3s;
+.portfolio-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.portfolio .portfolio-content .portfolio-info {
-  opacity: 0;
+.portfolio-card:hover .portfolio-img img {
+  transform: scale(1.1);
+}
+
+.portfolio-hover {
   position: absolute;
-  inset: 0;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px;
-}
-
-.portfolio .portfolio-content .portfolio-info h4 {
-  font-size: 14px;
-  padding: 5px 10px;
-  font-weight: 400;
-  color: #ffffff;
-  display: inline-block;
-  background-color: var(--accent-color);
-}
-
-.portfolio .portfolio-content .portfolio-info p {
-  position: absolute;
-  bottom: 10px;
-  text-align: center;
-  display: inline-block;
+  top: 0;
   left: 0;
-  right: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.portfolio .portfolio-content .portfolio-info .preview-link,
-.portfolio .portfolio-content .portfolio-info .details-link {
-  position: absolute;
-  left: calc(50% - 40px);
-  font-size: 26px;
-  top: calc(50% - 14px);
-  color: #fff;
-  transition: 0.3s;
-  line-height: 1.2;
-}
-
-.portfolio .portfolio-content .portfolio-info .preview-link:hover,
-.portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
-  font-size: 34px;
-  line-height: 0;
-}
-
-.portfolio .portfolio-content:hover .portfolio-info {
+.portfolio-card:hover .portfolio-hover {
   opacity: 1;
 }
 
-.portfolio .portfolio-content:hover img {
+.portfolio-links {
+  display: flex;
+  gap: 15px;
+}
+
+.portfolio-links a {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-links a:hover {
+  background: #4db5ff;
   transform: scale(1.1);
+}
+
+.portfolio-info {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-info h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.portfolio-tags span {
+  background: #f0f8ff;
+  color: #4db5ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.portfolio-info p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Placeholder for future projects */
+.placeholder .portfolio-img {
+  background: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon {
+  text-align: center;
+  color: #aaa;
+}
+
+.coming-soon i {
+  font-size: 50px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.coming-soon span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* View More Button */
+.view-more-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 30px;
+  background: white;
+  color: #333;
+  border-radius: 50px;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.view-more-btn span {
+  color: #4db5ff;
+  font-weight: 600;
+}
+
+.view-more-btn:hover {
+  background: #4db5ff;
+  color: white;
+  box-shadow: 0 8px 25px rgba(77, 181, 255, 0.3);
+}
+
+.view-more-btn:hover span {
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .portfolio-img {
+    height: 220px;
+  }
 }
 
 /*--------------------------------------------------------------
